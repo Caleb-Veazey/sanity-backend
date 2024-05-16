@@ -4,6 +4,7 @@ import page from './documents/page'
 import redirect from './documents/redirect'
 import blogPost from './documents/blog.post'
 import blogCategory from './documents/blog.category'
+import album from './documents/album'
 
 // objects
 import cta from './objects/cta'
@@ -19,6 +20,8 @@ import faqList from './modules/faq-list'
 import heroCentered from './modules/hero.centered'
 import heroPostcard from './modules/hero.postcard'
 import homePage from './modules/home-page'
+import bandcampEmbed from './modules/bandcamp-embed'
+import bandcampEmbedGrid from './modules/bandcamp-embed-grid'
 
 export const schemaTypes = [
 	// documents
@@ -27,6 +30,7 @@ export const schemaTypes = [
 	redirect,
 	blogPost,
 	blogCategory,
+	album,
 
 	// objects
 	cta,
@@ -41,5 +45,7 @@ export const schemaTypes = [
 	faqList,
 	heroCentered,
 	heroPostcard,
-	homePage
+	homePage,
+	bandcampEmbed,
+	bandcampEmbedGrid
 ]

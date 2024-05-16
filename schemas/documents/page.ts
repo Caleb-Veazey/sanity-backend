@@ -20,6 +20,8 @@ export default defineType({
 				{ type: 'hero.centered' },
 				{ type: 'hero.postcard' },
 				{ type: 'home-page' },
+				{ type: 'bandcampEmbed' },
+    		{ type: 'bandcampEmbedGrid' }
 			],
 		}),
 		defineField({
