@@ -12,6 +12,7 @@ const structure: StructureResolver = (S, context) =>
       S.documentTypeListItem('redirect').title('Redirects'),
       S.divider(),
       S.documentTypeListItem('album').title('Albums').icon(VscFileMedia),
+      S.documentTypeListItem('youTubeVideo').title('YouTube Videos').icon(VscFileMedia),
       S.divider(),
       S.documentTypeListItem('blog.post').title('Blog posts'),
       S.documentTypeListItem('blog.category').title('Blog categories'),

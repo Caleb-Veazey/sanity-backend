@@ -21,7 +21,8 @@ export default defineType({
 				{ type: 'hero.postcard' },
 				{ type: 'home-page' },
 				{ type: 'bandcampEmbed' },
-    		{ type: 'bandcampEmbedGrid' }
+				{ type: 'bandcampEmbedGrid' },
+				{ type: 'embedGrid' }
 			],
 		}),
 		defineField({
