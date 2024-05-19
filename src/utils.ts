@@ -48,3 +48,10 @@ export function getBlockText(
 		}, '') || ''
 	)
 }
+
+export function getBandcampEmbedUrl(embedCode: string): string | null {
+  if (!embedCode) return null;
+  const regex = /<iframe.*?src="(.*?)".*?>/i;
+  const match = embedCode.match(regex);
+  return match && match[1] ? match[1] : null;
+}

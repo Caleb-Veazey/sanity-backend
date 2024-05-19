@@ -9,6 +9,8 @@ import {
 } from '@sanity/dashboard'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemas'
+import { sanityComputedField } from 'sanity-plugin-computed-field';
+
 
 const singletonTypes = ['site']
 
@@ -23,6 +25,7 @@ export default defineConfig({
 		structureTool({ defaultDocumentNode, structure }),
 		dashboardTool({ widgets: [projectInfoWidget(), projectUsersWidget()] }),
 		visionTool(),
+		sanityComputedField(), 
 	],
 
 	schema: {

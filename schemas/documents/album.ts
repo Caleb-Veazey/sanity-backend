@@ -1,5 +1,6 @@
 // schemas/documents/album.ts
 import { defineField, defineType } from 'sanity'
+import { getBandcampEmbedUrl } from '../../src/utils';
 
 export default defineType({
   name: 'album',
@@ -21,6 +22,32 @@ export default defineType({
       name: 'bandcampEmbedCode',
       title: 'Bandcamp Embed Code',
       type: 'string',
+      validation: (Rule) =>
+        Rule.custom((value) => {
+          if (!value) return true; // Allow empty value
+          const regex = /<iframe.*?src="(.*?)".*?>/i;
+          const match = value.match(regex);
+          if (!match || !match[1]) {
+            return 'Please provide a valid Bandcamp embed code.';
+          }
+          return true;
+        }),
+    }),
+    defineField({
+      name: 'bandcampEmbedUrl',
+      title: 'Bandcamp Embed URL',
+      type: 'computedString',
+      readOnly: true,
+      options: {
+        buttonText: 'Extract URL',
+        documentQuerySelection: `
+          "bandcampEmbedCode": bandcampEmbedCode
+        `,
+        reduceQueryResult: (result) => {
+          const { bandcampEmbedCode } = result.published;
+          return getBandcampEmbedUrl(bandcampEmbedCode) || '';
+        },
+      },
     }),
     defineField({
       name: 'releaseDate',
