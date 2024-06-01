@@ -56,5 +56,22 @@ export default defineType({
 				},
 			],
 		}),
+		defineField({
+      name: 'convertKitMailingList',
+      title: 'ConvertKit Mailing List',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'linkText',
+          title: 'Link Text',
+          type: 'string',
+        }),
+        defineField({
+          name: 'scriptSrc',
+          title: 'ConvertKit Script URL',
+          type: 'url',
+        }),
+      ],
+    }),
 	],
 })
